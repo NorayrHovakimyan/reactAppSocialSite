@@ -1,28 +1,15 @@
 import React from 'react';
-import s from './MyPosts.module.css';
+import s from './Post.module.css';
 
-const MyPosts = () => {
+const Post = () => {
     return (
-        <div className={s.content}>
-            <div className={s.content_bg}>
-                <img src="images/content_bg.jpg" alt="content background"/>
-            </div>
-            <div>
-                avatar + description
-            </div>
-            <div>
-                My posts
-                <div>
-                    new post
+        <div className={s.post}>
+            <div className={s.info}>
+                <div className={s.avatar}>
+                    <img src="images/post_avatar.png" alt="avatar"/>
                 </div>
-                <div>
-                    post 1
-                </div>
-                <div>
-                    post 2
-                </div>
-                <div>
-                    post 3
+                <div className={s.text}>
+                    Post 1
                 </div>
             </div>
         </div>
@@ -30,5 +17,5 @@ const MyPosts = () => {
 };
 
 
-export default MyPosts;
+export default Post;
 

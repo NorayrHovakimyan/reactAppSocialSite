@@ -1,34 +1,22 @@
 import React from 'react';
-import s from './Profile.module.css';
+import s from './MyPosts.module.css';
+import Post from "./Post/Post";
 
-const Profile = () => {
+const MyPosts = () => {
     return (
-        <div className={s.content}>
-            <div className={s.content_bg}>
-                <img src="images/content_bg.jpg" alt="content background"/>
-            </div>
+        <div className={s.myposts}>
+            My posts
             <div>
-                avatar + description
+                <textarea name="addpost" id="addPost" cols="30" rows="3" placeholder='type text..'> </textarea>
+                 <div>
+                     <button>Add Post</button>
+                 </div>
             </div>
-            <div>
-                My posts
-                <div>
-                    new post
-                </div>
-                <div>
-                    post 1
-                </div>
-                <div>
-                    post 2
-                </div>
-                <div>
-                    post 3
-                </div>
-            </div>
+            <Post/>
         </div>
     )
 };
 
 
-export default Profile;
+export default MyPosts;
 

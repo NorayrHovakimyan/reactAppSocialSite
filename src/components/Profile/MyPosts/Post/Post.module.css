@@ -6,3 +6,18 @@
     width: 100%;
     height: 12em;
 }
+.avatar{
+    width: 5vw;
+}
+.avatar > img{
+    width: 100%;
+}
+
+.info{
+    padding: 10px;
+    width: 5vw;
+    text-align: center;
+}
+.text{
+    color:blue
+}

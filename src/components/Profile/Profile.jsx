@@ -1,33 +1,20 @@
 import React from 'react';
-import s from './Header.module.css';
+import s from './Profile.module.css';
+import MyPosts from "./MyPosts/MyPosts";
 
 const Profile = () => {
     return (
-        <div className='content'>
-            <div className='content_bg'>
+        <div className={s.content}>
+            <div className={s.content_bg}>
                 <img src="images/content_bg.jpg" alt="content background"/>
             </div>
             <div>
                 avatar + description
             </div>
-            <div>
-                My posts
-                <div>
-                    new post
-                </div>
-                <div>
-                    post 1
-                </div>
-                <div>
-                    post 2
-                </div>
-                <div>
-                    post 3
-                </div>
-            </div>
+            <MyPosts/>
         </div>
     )
-}
+};
 
 
 export default Profile;

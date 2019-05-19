@@ -1,10 +1,10 @@
 import React from 'react';
-import s from './Header.module.css';
+import s from './Navbar.module.css';
 
 const Navbar = () => {
     return (
-        <nav className='nav'>
-            <ul>
+        <nav className={s.nav}>
+            <ul className={s.ul}>
                 <li><a href="/profile">Profile </a></li>
                 <li><a href="/content">Content </a></li>
                 <li><a href="/messages">Messages </a></li>
@@ -12,7 +12,7 @@ const Navbar = () => {
             </ul>
         </nav>
     )
-}
+};
 
 
 export default Navbar;
