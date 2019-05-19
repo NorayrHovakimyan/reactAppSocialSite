@@ -1,0 +1,16 @@
+.nav{
+    grid-area: n;
+    background-color: #8ECEE7;
+}
+
+
+.ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.ul > li > a{
+    text-decoration-line: none;
+    color: whitesmoke;
+    font-weight: bolder;
+}
