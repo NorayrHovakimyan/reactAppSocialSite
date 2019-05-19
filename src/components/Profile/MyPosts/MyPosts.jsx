@@ -5,14 +5,14 @@ import Post from "./Post/Post";
 
 
 const MyPosts = (props) => {
-
-    let postsElements = props.postsData.map(i => <Post message={i.message} likesCount={i.likesCount}/>);
+    // debugger;
+    let postsElements = props.profileState.map(i => <Post message={i.message} likesCount={i.likesCount}/>);
 
        return (
         <div className={s.myPosts}>
             My posts
             <div>
-                <textarea name="addingpost" id="addPost" cols="30" rows="3" placeholder='type text..'> </textarea>
+                <textarea name="addpost" id="addPost" cols="30" rows="3" placeholder='type text..'> </textarea>
                  <div>
                      <button>Add Post</button>
                  </div>
