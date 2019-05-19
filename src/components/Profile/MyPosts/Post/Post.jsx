@@ -1,7 +1,7 @@
 import React from 'react';
 import s from './Post.module.css';
 
-const Post = () => {
+const Post = (props) => {
     return (
         <div className={s.post}>
             <div className={s.info}>
@@ -9,7 +9,8 @@ const Post = () => {
                     <img src="images/post_avatar.png" alt="avatar"/>
                 </div>
                 <div className={s.text}>
-                    Post 1
+                    { props.message}
+                    <div>Likes - { props.likesCount }</div>
                 </div>
             </div>
         </div>

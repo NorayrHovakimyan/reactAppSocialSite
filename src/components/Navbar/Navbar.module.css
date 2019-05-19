@@ -2,15 +2,16 @@
     grid-area: n;
     background-color: #8ECEE7;
 }
-
-
 .ul{
     list-style: none;
     margin: 0;
-    padding: 0;
+    padding: 10px;
 }
 .ul > li > a{
     text-decoration-line: none;
     color: whitesmoke;
     font-weight: bolder;
+}
+.ul > li .active{
+    color: darkblue;
 }
