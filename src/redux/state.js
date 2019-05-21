@@ -1,6 +1,9 @@
 const ADD_POST = 'ADD-POST';
 const UPDATE_POST_TEXT = 'UPDATE-POST-TEXT';
 
+const SEND_MESSAGE = 'SEND-MESSAGE';
+const UPDATE_MESSAGE_TEXT = 'UPDATE-MESSAGE-TEXT';
+
 
 let store = {
     _state: {
@@ -16,7 +19,8 @@ let store = {
                 {id:2,text:'text2'},
                 {id:3,text:'text3'},
                 {id:4,text:'text4'}
-            ]
+            ],
+            newDialogMessageText: 'default message'
         },
         profilePage:{
             postsData: [
@@ -25,7 +29,7 @@ let store = {
                 {id:3,message:'Message3',likesCount:30},
                 {id:4,message:'Message4',likesCount:40}
             ],
-            newPostText:'learning react'
+            newPostText: 'learning react'
         }
     },
     _callSubscriber(){
@@ -46,28 +50,37 @@ let store = {
                 likesCount:0
             };
             this._state.profilePage.postsData.push(newPost);
+            this._state.profilePage.newPostText = '';
             this._callSubscriber(this._state);
         }
         else if(action.type === UPDATE_POST_TEXT){
             this._state.profilePage.newPostText = action.newText;
             this._callSubscriber(this._state);
         }
+        else if(action.type === SEND_MESSAGE){
+            let newMessage = {
+                id:5,
+                text:this._state.dialogsPage.newDialogMessageText
+            };
+            this._state.dialogsPage.dialogMessages.push(newMessage);
+            this._state.dialogsPage.newDialogMessageText = '';
+            this._callSubscriber(this._state);
+        }
+        else if(action.type === UPDATE_MESSAGE_TEXT){
+            this._state.dialogsPage.newDialogMessageText = action.newMessageText;
+            this._callSubscriber(this._state);
+        }
     }
 };
 
 
-export const addPostActionCreator = () => {
-    return {
-        type: ADD_POST
-    }
-};
+export const addPostActionCreator = () => ({type:ADD_POST});
+export const updateNewPostTextActionCreator = (text) =>({type: UPDATE_POST_TEXT,newText: text});
 
-export const updateNewPostTextActionCreator = (text) => {
-    return {
-        type: UPDATE_POST_TEXT,
-        newText: text
-    }
-};
+export const sendMessageActionCreator = () => ({type:SEND_MESSAGE});
+export const updateNewMessageTextActionCreator = (message) => ({type:UPDATE_MESSAGE_TEXT,newMessageText: message});
+
+
 
 window.store = store;
 

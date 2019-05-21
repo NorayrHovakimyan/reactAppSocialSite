@@ -9,25 +9,19 @@ const MyPosts = props => {
   // debugger;
   // console.log(props.newPostText,'myposts');
 
-  let postsElements = props.profileState.map(i => (
-    <Post message={i.message} likesCount={i.likesCount} />
-  ));
+  let postsElements = props.state.profilePage.postsData.map(i => <Post message={i.message} likesCount={i.likesCount} />);
 
-  let newPostElement = React.createRef();
+  let newPostMessage = props.state.profilePage.newPostText;
 
   let addNewPost = () => {
     // debugger;
       props.dispatch( addPostActionCreator() );
-      props.dispatch( updateNewPostTextActionCreator(''))
   };
 
-  let onPostChange = () => {
+  let onPostChange = (e) => {
       // debugger;
-    let text = newPostElement.current.value;
-
-    let action = updateNewPostTextActionCreator(text);
-    props.dispatch(action);
-
+    let postText = e.target.value;
+    props.dispatch(updateNewPostTextActionCreator(postText));
   };
 
   return (
@@ -35,9 +29,8 @@ const MyPosts = props => {
       My posts
       <div>
         <textarea
-          ref={newPostElement}
           onChange={onPostChange}
-          value={props.newPostText}
+          value={newPostMessage}
           cols="30"
           rows="3"
           placeholder="type text.."
