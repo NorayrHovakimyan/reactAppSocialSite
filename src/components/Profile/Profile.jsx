@@ -5,11 +5,16 @@ import ProfileInfo from "./ProfileInfo/ProfileInfo";
 
 const Profile = (props) => {
     // debugger;
-    console.log(props,'profile');
+    // console.log(props);
+
     return (
         <div className={s.profile}>
             <ProfileInfo/>
-            <MyPosts profileState={props.profileState.postsData}/>
+            <MyPosts profileState={props.profileState.postsData}
+                     newPostText={props.profileState.newPostText}
+                     addPost={props.addPost}
+                     updatePostText={props.updatePostText}
+            />
         </div>
     )
 };
